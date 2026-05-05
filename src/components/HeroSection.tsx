@@ -15,7 +15,7 @@ const HeroSection = () => {
     if (typeof window.initWiapyUpsell === "function") {
       window.initWiapyUpsell({
         linkUrl: "https://pay.wiapy.com/checkout/69e832ba5d570505717cd744",
-        linkText: "GARANTIR OFERTA",
+        linkText: "GARANTIZAR OFERTA",
         styles: {
           backgroundColor: "#094b00ff",
           hoverBackgroundColor: "#1e6b00ff",
@@ -23,7 +23,7 @@ const HeroSection = () => {
           borderRadius: "10px"
         },
         refusalLinkUrl: "https://costurahospitalar.vercel.app",
-        refusalLinkText: "Não, vou deixar passar",
+        refusalLinkText: "No, lo dejaré pasar",
         refusalLinkColor: "#ffffffff"
       });
     }
@@ -49,7 +49,7 @@ const HeroSection = () => {
       <section className="relative overflow-hidden pt-8 pb-12 sm:pt-12 sm:pb-20 bg-[#c43c6f] text-white">
         {/* Top Urgent Bar */}
         <div className="bg-[#a02a50] text-white py-2 text-center font-bold uppercase tracking-widest text-2xl bg-urgency pt-8 pb-4">
-          🚨 ESSA É A SUA ÚLTIMA CHANCE!
+          🚨 ¡ESTA ES TU ÚLTIMA OPORTUNIDAD!
         </div>
 
         <div className="section-container mt-8">
@@ -60,7 +60,7 @@ const HeroSection = () => {
             className="text-center max-w-5xl mx-auto"
           >
             <h2 className="text-xl sm:text-2xl font-bold text-white text-balance mb-4">
-              São apenas mais 5 unidades disponíveis. <span className="text-[#ffe500]">E estamos liberando um desconto especial para você!</span>
+              Solo quedan 5 unidades disponibles. <span className="text-[#ffe500]">¡Y estamos liberando un descuento especial para ti!</span>
             </h2>
 
             {/* Down Arrows */}
@@ -71,12 +71,12 @@ const HeroSection = () => {
             </div>
 
             <p className="text-white text-xl sm:text-2xl mb-8">
-              Essa oferta não ficará disponível <span className="text-[#ffe500] font-bold">novamente!</span> 
+              ¡Esta oferta no estará disponible <span className="text-[#ffe500] font-bold">de nuevo!</span> 
             </p>
 
             {/* Pricing */}
             <p className="text-white text-4xl sm:text-3xl font-bold mt-8">
-              De <span className="line-through">R$ 49,90</span> por apenas <span className="text-[#ffe500]">R$ 4,90</span>
+              De <span className="line-through">R$ 49,90</span> por solo <span className="text-[#ffe500]">R$ 4,90</span>
             </p>
 
 {/* Wiapy Upsell Widget */}
@@ -89,14 +89,14 @@ const HeroSection = () => {
       </section>
       <section className="bg-[#c43c6f] text-white py-8 px-4 text-center">
         <p className="text-lg italic mb-4">
-          Essa é a sua única chance de garantir esse pack com desconto. Ao fechar essa página, o valor volta ao normal e essa oferta desaparece.
+          Esta es tu única oportunidad de asegurar este pack con descuento. Al cerrar esta página, el valor vuelve a la normalidad y esta oferta desaparece.
         </p>
         <div className="flex flex-col items-center justify-center mb-8">
-          <img src="/logocostura.png" alt="Curso de Costura Hospitalar" className="w-48 h-auto mx-auto mb-4 rounded-full" />
+          <img src="/logocostura.png" alt="Curso de Costura Hospitalaria" className="w-48 h-auto mx-auto mb-4 rounded-full" />
         </div>
         <div className="bg-[#ffe500] text-[#1a1a1a] py-4 px-4 text-center font-bold text-xl mb-4 gap-4 flex flex-col items-center justify-center">
-          <p>OBRIGADO PELA SUA INSCRIÇÃO!</p>
-          <p>Seu acesso ao curso já foi enviado ao seu E-mail!</p>
+          <p>¡GRACIAS POR TU INSCRIPCIÓN!</p>
+          <p>¡Tu acceso al curso ya ha sido enviado a tu correo electrónico!</p>
         </div>
       </section>
     </>
