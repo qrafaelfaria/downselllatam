@@ -1,32 +1,36 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, AlertTriangle, Gem, ArrowRight, Ban, ArrowDown, TriangleAlert } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
 declare global {
   interface Window {
-    initWiapyUpsell: (config: any) => void;
+    checkoutElements: any;
   }
 }
 
 const HeroSection = () => {
   const [minutes, setMinutes] = useState(3);
   const [seconds, setSeconds] = useState(0);
+
   useEffect(() => {
-    if (typeof window.initWiapyUpsell === "function") {
-      window.initWiapyUpsell({
-        linkUrl: "https://pay.wiapy.com/checkout/69e832ba5d570505717cd744",
-        linkText: "GARANTIZAR OFERTA",
-        styles: {
-          backgroundColor: "#094b00ff",
-          hoverBackgroundColor: "#1e6b00ff",
-          fontSize: "20px",
-          borderRadius: "10px"
-        },
-        refusalLinkUrl: "https://costurahospitalar.vercel.app",
-        refusalLinkText: "No, lo dejaré pasar",
-        refusalLinkColor: "#ffffffff"
-      });
-    }
+    // Load Hotmart script
+    const script = document.createElement("script");
+    script.src = "https://checkout.hotmart.com/lib/hotmart-checkout-elements.js";
+    script.async = true;
+    script.onload = () => {
+      if (window.checkoutElements) {
+        window.checkoutElements.init("salesFunnel").mount("#hotmart-sales-funnel");
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup if necessary, though usually scripts remain
+      const existingScript = document.querySelector(`script[src="${script.src}"]`);
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -73,16 +77,6 @@ const HeroSection = () => {
             <p className="text-white text-xl sm:text-2xl mb-8">
               ¡Esta oferta no estará disponible <span className="text-[#ffe500] font-bold">de nuevo!</span> 
             </p>
-
-            {/* Pricing */}
-            <p className="text-white text-4xl sm:text-3xl font-bold mt-8">
-              De <span className="line-through">R$ 49,90</span> por solo <span className="text-[#ffe500]">R$ 4,90</span>
-            </p>
-
-{/* Wiapy Upsell Widget */}
-            <div className="mt-8">
-              <div id="wiapy_upsell"></div>
-            </div>
 
           </motion.div>
         </div>
