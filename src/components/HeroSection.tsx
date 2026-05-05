@@ -78,6 +78,11 @@ const HeroSection = () => {
               ¡Esta oferta no estará disponible <span className="text-[#ffe500] font-bold">de nuevo!</span> 
             </p>
 
+            {/* HOTMART - Sales Funnel Widget */}
+            <div className="mt-8">
+              <div id="hotmart-sales-funnel"></div>
+            </div>
+
           </motion.div>
         </div>
       </section>
